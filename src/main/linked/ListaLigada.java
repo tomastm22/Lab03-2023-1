@@ -7,7 +7,7 @@ public class ListaLigada implements EstruturaElementar{
     private No cabeca;
 
     public ListaLigada() {
-
+        cabeca = null;
     }
 
     @Override
@@ -18,8 +18,10 @@ public class ListaLigada implements EstruturaElementar{
 
     @Override
     public int buscaIndice(int valor) {
+        
+        
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscaIndice'");
+        //throw new UnsupportedOperationException("Unimplemented method 'buscaIndice'");
     }
 
     @Override
@@ -59,15 +61,31 @@ public class ListaLigada implements EstruturaElementar{
     }
 
     @Override
-    public void insereInicio(int valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insereInicio'");
+    public void insereInicio(int valor) {      
+        if (this.cabeca == null){           
+            this.cabeca = new No(valor);    
+        }
+
+        else {
+            No n = new No(valor);
+            n.setProximo(this.cabeca);
+            this.cabeca = n;
+        }
+
     }
 
     @Override
     public void insereFim(int valor) {
+        if (cabeca == null) {
+            this.cabeca = new No(valor);
+        }
+
+        else{
+            
+        }
+        
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insereFim'");
+        //throw new UnsupportedOperationException("Unimplemented method 'insereFim'");
     }
 
     @Override
